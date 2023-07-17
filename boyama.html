@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>boyama</title>
+<script language="javascript" type="text/javascript">
+	var durum=false;
+	
+	function nesneEkle(){
+	//	tuval.innerHTML+="div style='position:absolute; left:" + window.event.clientX + 
+		//											 "px; top:" + window.event.clientY +
+			//										 "px; width:" + olculer.value +
+				//							      "px; height:" + olculer.value +
+					//				"px; background-color:" + renkler.value +"></div>";
+									
+	
+	}//en of mesmeEkle
+	function solTus(){
+	
+		if(durum==false)durum=true; else durum=false;
+					
+		if(durum==true)tuval.innerHTML+="";else tuval.innerHTML+=""
+	
+	}// end of soltus
+	
+	function ikonNerede(){
+	//	tuval.innerHTML+="<span style='color:red'>Fare("+
+		//												window.event.clientX + ":"+
+			//									window.event.clientY + ")konumda</span><br />";
+												
+	if(durum==true){
+	
+		tuval.innerHTML+="<div style='position:absolute; left:" + window.event.clientX +
+	 "px; top:" + window.event.clientY + "px; width:" + olculer.value + "px; height:" + olculer.value + "px; background-color:" + renkler.value + "'></div>";
+	
+	
+	}
+	}
+	</script>
+	
+</head>
+
+<body>
+<span style="color:red; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:16px">Renk kutusu</span>
+<select  id="renkler">
+  <option value="red">Kırmızı</option>
+  <option value="yellow">Sarı</option>
+  <option value="green">Yeşil</option>
+  <option value="blue" selected>Mavi</option>
+  <option value="purple">Mor</option>
+  <option value="brown">Kahverengi</option>
+  <option value="black">Siyah</option>
+  <option value="white">Beyaz</option>
+</select>
+
+<span style="color:red; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:16px">Ölçüler</span>
+<select  id="olculer">
+    <option value="5">5x5</option>
+    <option value="10" selected>10x10</option>
+    <option value="20">20x20</option>
+    <option value="30">30x30</option>
+    <option value="40">40x40</option>
+    <option value="50">50x50</option>
+    <option value="60">60x60</option>
+    <option value="70">70x70</option>
+    <option value="80">80x80</option>
+    <option value="90">90x90</option>
+    <option value="100">100x100</option>
+</select>
+<br /><br />
+
+<div onMouseDown="solTus()" onMouseUp="solTus()" onMouseMove="ikonNerede()" 
+id="tuval" style="width:100%; height:90%; border:1px solid #999; background-color:#eee; font-size:24px; overflow:hidden">
+
+</div>
+
+</body>
+</html>
